@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-card {
+  background: $card-bg;
+  border-radius: $radius-xxl;
+  @include elevate($shadow-sm);
+  @include transition(transform .25s ease, box-shadow .25s ease);
+  animation: fadeSlideUp .6s ease both;
+}
+
+.card-link:hover .app-card,
+.card-link:focus .app-card {
+  transform: translateY(-6px);
+  @include elevate($shadow-md);
+}
+
+.card-link:active .app-card {
+  transform: translateY(-2px) scale(.997);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-card { animation: none; transition: none; }
+}

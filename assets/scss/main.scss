@@ -1,0 +1,6 @@
+// Main SCSS entry
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/reset";
+@use "components/cards";
+@use "pages/home";

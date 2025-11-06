@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.home-hero {
+  padding-block: clamp(2rem, 3vw, 3rem);
+}
+
+.home-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  @include respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

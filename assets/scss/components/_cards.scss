@@ -17,7 +17,7 @@
   border-radius: $radius-xxl;
   @include elevate($shadow-sm);
   @include transition(transform .25s ease, box-shadow .25s ease);
-  animation: fadeSlideUp .6s ease both;
+  animation: fadeSlideUp 2s ease both;
 }
 
 .card-link:hover .app-card,

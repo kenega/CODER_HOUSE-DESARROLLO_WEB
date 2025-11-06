@@ -1,118 +1,88 @@
-:root{
-  --brand: #3a86ff;
-  --brand-2: #8338ec;
-  --bg: #ffffff;
-  --fg: #0f172a;
-  --muted: #475569;
-  --radius-xl: 1.25rem;
-  --container-max: 1320px;
-  --shadow-1: 0 1px 2px rgba(0,0,0,.06), 0 4px 20px rgba(0,0,0,.06);
+:root {
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg: #0b0f1a;
-    --fg: #e2e8f0;
-    --muted: #94a3b8;
-  }
-  img{ opacity:.98 }
-}
-
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--fg);
-  background: var(--bg);
+body {
+  background: #f8f9fa;
+  color: #1c1f23;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
 }
 
-.container-xxl{
-  max-width: var(--container-max);
-  padding-inline: clamp(1rem, 3vw, 2rem);
-}
-
-.display-5{
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.btn-primary{
-  --bs-btn-bg: var(--brand);
-  --bs-btn-border-color: var(--brand);
-  --bs-btn-hover-bg: #2f6fd1;
-  --bs-btn-hover-border-color: #2f6fd1;
-}
-
-.rounded-4{
-  border-radius: var(--radius-xl) !important;
-}
-
-.shadow-sm{
-  box-shadow: var(--shadow-1) !important;
-}
-
-main, header, footer, section, article{
-  overflow-x: clip;
-}
-
-.card-img-top{
-  width: 100%;
+img {
+  max-width: 100%;
   height: auto;
 }
 
-.object-fit-cover{
-  object-fit: cover;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.needs-validation.was-validated .form-control:invalid{
-  border-color: #ef4444;
+a:focus-visible {
+  outline: 3px solid rgba(13, 110, 253, 0.5);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
 }
 
-.grid-auto-fit{
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.06), 0 0.25rem 0.75rem rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, box-shadow;
+  animation: fadeSlideUp 2s ease both;
+}
+
+.card-link:hover .app-card,
+.card-link:focus .app-card {
+  transform: translateY(-6px);
+  box-shadow: 0 1.25rem 2.25rem rgba(0, 0, 0, 0.08), 0 0.5rem 1rem rgba(0, 0, 0, 0.06);
+}
+
+.card-link:active .app-card {
+  transform: translateY(-2px) scale(0.997);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-card {
+    animation: none;
+    transition: none;
+  }
+}
+.home-hero {
+  padding-block: clamp(2rem, 3vw, 3rem);
+}
+
+.home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
 }
-
-@media (prefers-reduced-motion: no-preference){
-  a, button{
-    transition: all .2s ease;
-  }
-  .card:hover{
-    transform: translateY(-2px);
+@media (min-width: 768px) {
+  .home-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-img{
-  max-width:100%;
-  height:auto;
-}
-
-.lead{
-  color: var(--muted);
-}
-
-.lh-tight{
-  line-height: 1.1;
-}
-
-
-table.table td, table.table th{
-  vertical-align: middle;
-}
-.badge{
-  font-weight: 600;
-  border-radius: 999px;
-  padding: .4rem .6rem;
-}
-
-header .navbar-brand{
-  letter-spacing: .2px;
-}
-
-:root{
-  --brand: #0ea5e9;
-  --brand-2: #22c55e;
-}
+/*# sourceMappingURL=style.css.map */

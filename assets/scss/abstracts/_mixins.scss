@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 @mixin transition($props...) {
   transition: $props;
   will-change: transform, box-shadow;
